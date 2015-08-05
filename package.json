@@ -1,0 +1,42 @@
+{
+  "name": "hack-modules-symlinks",
+  "description": "Hack symlinks in the node_modules dir because of vagrant troubles",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "mocha test/index.js",
+    "coverage": "mocha test/index.js -r blanket -R mocha-term-cov-reporter",
+    "coverage-ci": "mocha test/index.js -r blanket -R mocha-lcov-reporter > lcov.info && codeclimate < lcov.info",
+    "benchmark": "node test/benchmark/no-compile.js; node test/benchmark/with-compile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/orangemug/hack-modules-symlinks.git"
+  },
+  "config": {
+    "blanket": {
+      "pattern": [
+        "index.js"
+      ],
+      "data-cover-never": "node_modules"
+    }
+  },
+  "keywords": [
+    "template",
+    "sql"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "devDependencies": {
+    "blanket": "^1.1.7",
+    "codeclimate-test-reporter": "0.0.4",
+    "coveralls": "^2.11.2",
+    "lodash": "^3.9.1",
+    "mocha": "^2.2.4",
+    "mocha-lcov-reporter": "0.0.2",
+    "mocha-term-cov-reporter": "^0.2.0"
+  }
+}
