@@ -1,7 +1,7 @@
 var fs     = require("fs");
 var Module = require('module');
 
-var basepath = __dirname;
+var basepath = __dirname+"/../";
 var files = fs.readdirSync(basepath);
 
 // Get the symlink mappings
